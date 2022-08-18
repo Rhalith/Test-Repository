@@ -10,14 +10,14 @@ namespace Assets.Scripts
         [SerializeField] private PlayerSpecs _playerSpec = null;
         [SerializeField] private PlayerInput _playerInput;
         private InputAction _moveAction;
-        private Vector2 _movement;
+        public Vector2 _movement;
 
         private void Awake()
-        {
+        { 
             _moveAction = _playerInput.actions["Move"];
         }
 
-        public void TestMoruk()
+        public void MovementWithKeyboard()
         {
             var input = _moveAction.ReadValue<Vector2>();
             _movement.x = input.x;
