@@ -1,3 +1,4 @@
+using Assets.Scripts.Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Assets.Scripts.Arrow
             if (collision.collider.CompareTag("Enemy"))
             {
                 KillEnemy(collision);
+                DestroyArrow();
             }
             else if (collision.collider.CompareTag("Obstacle"))
             {
@@ -25,7 +27,7 @@ namespace Assets.Scripts.Arrow
 
         private void KillEnemy(Collision enemy)
         {
-            enemy.gameObject.GetComponent<Enemy>();
+            enemy.gameObject.GetComponentInParent<EnemyManager>().KillEnemy();
         }
 
         private void StopArrow()
