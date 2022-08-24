@@ -43,7 +43,7 @@ namespace Assets.Scripts.Enemy
             ChangeEnemySpeed(0);
             _meshRenderer.enabled = false;
             _particleSystem.Play();
-            Invoke("DestroyEnemy", 1.2f);
+            Invoke(nameof(DestroyEnemy), 1.2f);
         }
 
         private void DestroyEnemy()
